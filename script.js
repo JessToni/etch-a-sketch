@@ -1,4 +1,5 @@
 //Create a function that creates a grid using square divs
+makeGrid();
 
 function makeGrid() {
     const container = document.getElementById("container");
