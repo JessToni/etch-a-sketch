@@ -7,4 +7,5 @@ body {
 div {
     max-height: 75px;
     max-width: 75px;
+    background-color: blue;
 }

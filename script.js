@@ -1,3 +1,12 @@
-const container = document.createElement("div");
-container.id = "box";
-document.body.appendChild(box);
+//Create a function that creates a grid using square divs
+
+function makeGrid() {
+    const container = document.getElementById("container");
+
+    for (let i = 0; i < 16; i++) {
+        let myRow = document.createElement("div");
+        myRow.id = "square" + i; 
+
+        container.appendChild(myRow);
+    }
+}
