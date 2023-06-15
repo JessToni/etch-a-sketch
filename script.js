@@ -1,3 +1,3 @@
 const container = document.createElement("div");
 container.id = "box";
-document.body.appendChilde(box);
+document.body.appendChild(box);
