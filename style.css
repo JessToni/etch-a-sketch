@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f2f2f2;
+    background-color: grey;
 }
 
 #container {
@@ -16,5 +16,9 @@ body {
 .square {
     width: 40px;
     height:40px;
-    background-color: #c95151;
+    background-color: #f2f2f2;
+}
+
+.square.hovered {
+    background-color: #bfff00;
 }
