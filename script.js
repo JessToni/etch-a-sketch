@@ -12,3 +12,9 @@ for (let i = 0; i < 16; i++) {
         });
     }
 }
+
+const inputBtn = document.getElementById('canvas-btn');
+
+inputBtn.addEventListener('click', function () {
+    const userInput = prompt('Please enter the number of squares on each side you want to have for the canvas:');
+});
