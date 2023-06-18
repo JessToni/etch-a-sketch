@@ -15,13 +15,17 @@ for (let i = 0; i < 16; i++) {
 }
 
 inputBtn.addEventListener('click', function () {
-    const gridSize = parseInt(prompt('Please enter the number of squares on each side (1-100):'));
+    let gridSize;
 
-    if (gridSize === null) {
+    const userInput = prompt('Please enter the number of squares on each side (1-100):');
+
+    if (userInput === null) {
         return;
     }
 
-    if (isNaN(gridSize) || gridSize <= 0) {
+    gridSize = parseInt(userInput);
+
+    if (isNaN(gridSize) || gridSize <= 0 || gridSize > 100) {
         alert("Your input is invalid.");
         return;
     }
