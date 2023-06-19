@@ -9,10 +9,12 @@ for (let i = 0; i < 16; i++) {
         container.appendChild(div);
 
         div.addEventListener('mouseleave', function() {
-            div.classList.add('hovered');
+            div.style.backgroundColor = getRandomColor();
         });
     }
 }
+
+square.hovered.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 
 inputBtn.addEventListener('click', function () {
     let gridSize;
