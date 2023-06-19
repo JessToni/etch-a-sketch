@@ -2,17 +2,24 @@
 const container = document.getElementById('container');
 const inputBtn = document.getElementById('canvas-btn');
 
-for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
-        const div = document.createElement('div');
-        div.classList.add('square');
-        container.appendChild(div);
+function gridMaker(gridSize = 16) {
 
-        div.addEventListener('mouseleave', function() {
-            div.style.backgroundColor = getRandomColor();
-        });
+    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            const div = document.createElement('div');
+            div.classList.add('square');
+            container.appendChild(div);
+    
+            div.addEventListener('mouseleave', function() {
+                div.style.backgroundColor = getRandomColor();
+            });
+        }
     }
 }
+
+gridMaker();
 
 inputBtn.addEventListener('click', function () {
     let gridSize;
@@ -34,19 +41,7 @@ inputBtn.addEventListener('click', function () {
         container.removeChild(container.firstChild);
     }
 
-    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-
-    for (let i = 0; i < gridSize; i++) {
-        for (let j = 0; j < gridSize; j++) {
-            const div = document.createElement('div');
-            div.classList.add('square');
-            container.appendChild(div);
-    
-            div.addEventListener('mouseleave', function() {
-                div.style.backgroundColor = getRandomColor();
-            });
-        }
-    }
+    gridMaker(gridSize);
 });
 
 function getRandomColor() {
@@ -55,6 +50,6 @@ function getRandomColor() {
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)]
     }
-    
+
     return color;
 }
