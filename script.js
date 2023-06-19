@@ -1,6 +1,7 @@
 //Create a function that creates a grid using square divs
 const container = document.getElementById('container');
 const inputBtn = document.getElementById('canvas-btn');
+let gridSize;
 
 gridMaker();
 
@@ -27,8 +28,7 @@ function clearGrid() {
     }
 }
 
-inputBtn.addEventListener('click', function () {
-    let gridSize;
+function takeUserInput() {
     const userInput = prompt('Please enter the number of squares on each side (1-100):');
 
     if (userInput === null) {
@@ -41,7 +41,11 @@ inputBtn.addEventListener('click', function () {
         alert("Your input is invalid.");
         return;
     }
+}
 
+inputBtn.addEventListener('click', function () {
+    takeUserInput();
+    
     clearGrid();
 
     gridMaker(gridSize);
