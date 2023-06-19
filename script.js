@@ -2,11 +2,12 @@
 const container = document.getElementById('container');
 const inputBtn = document.getElementById('canvas-btn');
 const clearBtn = document.getElementById('clear-btn')
+const magicBtn = document.getElementById('magic-btn')
 let gridSize;
 
 gridMaker();
 
-function gridMaker(gridSize = 16) {
+function gridMaker(gridSize = 16, color = "#000000") {
 
     container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 
@@ -17,7 +18,7 @@ function gridMaker(gridSize = 16) {
             container.appendChild(div);
     
             div.addEventListener('mouseleave', function() {
-                div.style.backgroundColor = getRandomColor();
+                div.style.backgroundColor = color;
             });
         }
     }
@@ -63,4 +64,9 @@ inputBtn.addEventListener('click', function () {
 clearBtn.addEventListener('click', function () {
     clearGrid();
     gridMaker(gridSize);
+});
+
+magicBtn.addEventListener('click', function () {
+    clearGrid();
+    gridMaker(gridSize, getRandomColor);
 });
