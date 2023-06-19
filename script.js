@@ -8,7 +8,6 @@ let gridSize;
 gridMaker();
 
 function gridMaker(gridSize = 16, color = "#000000") {
-
     container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 
     for (let i = 0; i < gridSize; i++) {
@@ -23,6 +22,22 @@ function gridMaker(gridSize = 16, color = "#000000") {
         }
     }
 }
+
+function magicGridMaker(gridSize = 16) {
+    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            const div = document.createElement('div');
+            div.classList.add('square');
+            container.appendChild(div);
+    
+            div.addEventListener('mouseleave', function() {
+                div.style.backgroundColor = getRandomColor();
+            });
+        }
+    }
+} 
 
 function clearGrid() {
     while (container.firstChild) {
@@ -68,5 +83,5 @@ clearBtn.addEventListener('click', function () {
 
 magicBtn.addEventListener('click', function () {
     clearGrid();
-    gridMaker(gridSize, getRandomColor);
+    magicGridMaker(gridSize);
 });
