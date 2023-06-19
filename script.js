@@ -2,6 +2,8 @@
 const container = document.getElementById('container');
 const inputBtn = document.getElementById('canvas-btn');
 
+gridMaker();
+
 function gridMaker(gridSize = 16) {
 
     container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
@@ -19,11 +21,14 @@ function gridMaker(gridSize = 16) {
     }
 }
 
-gridMaker();
+function clearGrid() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
 
 inputBtn.addEventListener('click', function () {
     let gridSize;
-
     const userInput = prompt('Please enter the number of squares on each side (1-100):');
 
     if (userInput === null) {
@@ -37,9 +42,7 @@ inputBtn.addEventListener('click', function () {
         return;
     }
 
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
+    clearGrid();
 
     gridMaker(gridSize);
 });
