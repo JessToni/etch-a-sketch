@@ -56,5 +56,6 @@ function getRandomColor() {
         color += letters[Math.floor(Math.random() * 16)]
     }
 
+    color += '1A'
     return color;
 }
