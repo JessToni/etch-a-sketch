@@ -14,8 +14,6 @@ for (let i = 0; i < 16; i++) {
     }
 }
 
-square.hovered.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-
 inputBtn.addEventListener('click', function () {
     let gridSize;
 
