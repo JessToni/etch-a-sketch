@@ -1,6 +1,7 @@
 //Create a function that creates a grid using square divs
 const container = document.getElementById('container');
 const inputBtn = document.getElementById('canvas-btn');
+const clearBtn = document.getElementById('clear-btn')
 let gridSize;
 
 gridMaker();
@@ -43,14 +44,6 @@ function takeUserInput() {
     }
 }
 
-inputBtn.addEventListener('click', function () {
-    takeUserInput();
-    
-    clearGrid();
-
-    gridMaker(gridSize);
-});
-
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -60,3 +53,14 @@ function getRandomColor() {
 
     return color;
 }
+
+inputBtn.addEventListener('click', function () {
+    takeUserInput();
+    clearGrid();
+    gridMaker(gridSize);
+});
+
+clearBtn.addEventListener('click', function () {
+    clearGrid();
+    gridMaker(gridSize);
+});

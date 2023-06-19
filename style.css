@@ -24,7 +24,8 @@ body {
     transition: background-color 0.1s ease;
 }
 
-#canvas-btn {
+#canvas-btn,
+#clear-btn {
     display: flex;
     margin: 20px;
 }
