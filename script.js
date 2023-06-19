@@ -43,7 +43,7 @@ inputBtn.addEventListener('click', function () {
             container.appendChild(div);
     
             div.addEventListener('mouseleave', function() {
-                div.classList.add('hovered');
+                div.style.backgroundColor = getRandomColor();
             });
         }
     }
