@@ -22,7 +22,6 @@ body {
     width: 960px;
     margin: 0 auto;
     padding-bottom: 50px;
-    grid-template-columns: repeat(16, 1fr);
 }
 
 .square {
