@@ -11,17 +11,25 @@ gridMaker();
 
 function gridMaker(gridSize = 16, color = "#000000") {
     container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 
-    for (let i = 0; i < gridSize; i++) {
-        for (let j = 0; j < gridSize; j++) {
-            const div = document.createElement('div');
-            div.classList.add('square');
-            container.appendChild(div);
-    
-            div.addEventListener('mouseenter', function() {
-                div.style.backgroundColor = color;
-            });
-        }
+    gridStyle = 3;
+
+    let numDivs = gridSize * gridSize;
+
+    for (let j = 0; j < numDivs; j++) {
+        let div = document.createElement('div');
+        div.classList.add('square');
+        container.insertAdjacentElement("beforeend", div);
+
+        let opacity = 0;
+
+        div.addEventListener('mouseover', function() {
+            if (opacity < 1) {
+                opacity += 0.1;
+                div.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+              }
+        });
     }
 }
 
@@ -44,8 +52,8 @@ function magicGridMaker(gridSize = 16) {
 } 
 
 function shadedGridMaker (gridSize = 16, color = "#000000") {
-    container.style.gridTemplateColumns = `repeat(${gridSize}), 1fr`;
-    container.style.gridTemplateRows = `repeat(${gridSize}), 1fr`;
+    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 
     gridStyle = 3;
 
