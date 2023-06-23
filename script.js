@@ -33,6 +33,14 @@ function gridMaker(gridSize = 16, color = "#000000") {
     }
 }
 
+function colorSquares(colorChoice) {
+
+}
+
+function colorChoice() {
+    
+}
+
 function magicGridMaker(gridSize = 16) {
     container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 
