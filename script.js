@@ -18,67 +18,21 @@ function gridMaker(gridSize = 16, color = "#000000") {
     for (let j = 0; j < numDivs; j++) {
         let div = document.createElement('div');
         div.classList.add('square');
-        div.addEventListener('mouseover', colorSquares());
+        div.addEventListener('mouseover', colorSquares);
         container.insertAdjacentElement("beforeend", div);
     }
 }
 
-function colorSquares(colorChoice) {
-    if (colorChoice === 'black') {
-        let opacity = 0;
-        if (opacity < 1) {
-            opacity += 0.1;
-            this.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-        }
+function colorSquares() {
+    if (color === 'black') {
+        this.style.backgroundColor = 'black';
     } else {
-        this.style.backgroundColor = getRandomColor();
+        this.style.backgroundColor = `hsl(${Math.random * 360}), 100%, 50%`;
     }
 }
 
 function colorChoice(colorChoice) {
-    let colorChoice = colorChoice;
-}
-
-function magicGridMaker(gridSize = 16) {
-    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-
-    gridStyle = 2;
-
-    for (let i = 0; i < gridSize; i++) {
-        for (let j = 0; j < gridSize; j++) {
-            const div = document.createElement('div');
-            div.classList.add('square');
-            container.appendChild(div);
-    
-            div.addEventListener('mouseenter', function() {
-                div.style.backgroundColor = getRandomColor();
-            });
-        }
-    }
-} 
-
-function shadedGridMaker (gridSize = 16, color = "#000000") {
-    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-
-    gridStyle = 3;
-
-    let numDivs = gridSize * gridSize;
-
-    for (let j = 0; j < numDivs; j++) {
-        let div = document.createElement('div');
-        div.classList.add('square');
-        container.insertAdjacentElement("beforeend", div);
-
-        let opacity = 0;
-
-        div.addEventListener('mouseover', function() {
-            if (opacity < 1) {
-                opacity += 0.1;
-                div.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-              }
-        });
-    }
+    color = colorChoice;
 }
 
 function clearGrid() {
@@ -102,16 +56,6 @@ function takeUserInput() {
     }
 }
 
-function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)]
-    }
-
-    return color;
-}
-
 inputBtn.addEventListener('click', function () {
     takeUserInput();
     clearGrid();
@@ -124,9 +68,9 @@ clearBtn.addEventListener('click', function () {
 });
 
 magicBtn.addEventListener('click', function () {
-    colorChoice('black');
+    colorChoice('magic');
 });
 
 shadeBtn.addEventListener('click', function () {
-    colorChoice('magic')
+    colorChoice('black')
 })
