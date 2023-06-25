@@ -30,10 +30,12 @@ function gridMaker(gridSize = 16, color = "#000000") {
 
 //A function that determines the color of square divs when mouse hovers over them.
 function colorSquares() {
-    if (color === 'black') {
-        this.style.backgroundColor = 'black';
-    } else {
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    if (click) {
+        if (color === 'black') {
+            this.style.backgroundColor = 'black';
+        } else {
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        }
     }
 }
 
@@ -85,3 +87,10 @@ magicBtn.addEventListener('click', function () {
 shadeBtn.addEventListener('click', function () {
     colorChoice('black')
 })
+
+//To enable click on and off the coloring function
+document.querySelector('body').addEventListener('click', (e) => {
+    if (e.target.tagName != 'BUTTON') {
+        click = !click;
+    }
+});
