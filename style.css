@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: darkgrey !important;
+    background-color: #B6977D !important;
     margin: 0;
     padding: 0;
     display: flex;
@@ -52,5 +52,25 @@ body {
     width: 100%;
     color: white;
     padding-top: 20px;
-    font-style: inherit;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+a {
+    color: black !important;
+}
+
+a:hover {
+    color: white !important;
+}
+
+#gh-logo{
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
 }
