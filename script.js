@@ -10,6 +10,9 @@ let gridSize;
 colorChoice('black');
 gridMaker();
 
+//To pause and resume coloring in sketch pad.
+let click = true;
+
 //A function that creates a grid using square divs.
 function gridMaker(gridSize = 16, color = "#000000") {
     container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
