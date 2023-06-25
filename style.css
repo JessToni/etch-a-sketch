@@ -1,3 +1,7 @@
+*{
+    font-family: 'VT323', monospace;
+}
+
 body {
     background-color: darkgrey !important;
     margin: 0;
@@ -37,4 +41,16 @@ body {
 #magic-btn {
     display: flex;
     margin: 20px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 300%;
+    font-weight: bolder;
+    width: 100%;
+    color: white;
+    padding-top: 20px;
+    font-style: inherit;
 }
